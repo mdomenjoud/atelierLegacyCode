@@ -28,8 +28,12 @@ public class FormationController {
     	String output = "<h1>Liste des formations</h1><table>";
     	Integer pourcent = FormationFactory.getPourcent(intId);
 		output+="<h4>Pourcentage de remplissage : "+pourcent +"</h4>";
+		
+		output+="<tr><td>ID internaute</td><td>ID Formation</td><td> Date Début</td><td> Date Fin</td><td>Ecole"
+				+"</td><td>Lieu</td><td>Specialite</td><td>Diplome</td><td>Obtenu"
+				+ "</td><td>Code</td><td>Libelle</td></tr>";
     	for(Formation result : results){
-    		output+="<tr><td>"+result+"</td></tr>";
+    		output+=result;
     	}
     	output+="</table>";
         return output;

@@ -186,9 +186,9 @@ public class Formation {
 
 	@Override
 	public String toString() {
-		return "Formation [intId=" + intId + ", frmId=" + frmId + ", frmDateDebut=" + frmDateDebut + ", frmDateFin=" + frmDateFin + ", frmEcole="
-				+ frmEcole + ", frmLieu=" + frmLieu + ", frmSpecialite=" + frmSpecialite + ", frmDiplome=" + frmDiplome + ", frmObtenu=" + frmObtenu
-				+ ", tfoCode=" + tfoCode + ", tfoLibelle=" + tfoLibelle + "]";
+		return "<tr><td>" + intId + "</td><td>" + frmId + "</td><td>" + frmDateDebut + "</td><td>" + frmDateFin + "</td><td>"
+				+ frmEcole + "</td><td>" + frmLieu + "</td><td>" + frmSpecialite + "</td><td>" + frmDiplome + "</td><td>" + frmObtenu
+				+ "</td><td>" + tfoCode + "</td><td>" + tfoLibelle + "</td></tr>";
 	}
 	
 }

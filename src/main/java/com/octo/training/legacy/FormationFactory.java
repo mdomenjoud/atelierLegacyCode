@@ -31,6 +31,7 @@ public class FormationFactory {
 	public static void insert(Formation formation) throws SQLException {
 		// Warning : fake for exercise
 		Long newId = Long.valueOf(Database.formationTable.size());
+		formation.setFrmId(newId);
 		Database.formationTable.put(newId, formation);
 		logger.info("inserting Formation :" + formation.toString());
 	}

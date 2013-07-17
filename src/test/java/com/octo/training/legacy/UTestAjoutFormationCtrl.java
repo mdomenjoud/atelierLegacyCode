@@ -1,11 +1,18 @@
 package com.octo.training.legacy;
 
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.sql.SQLException;
 
 import org.junit.Test;
+
+import com.octo.training.legacy.AjoutFormationCtrl;
+import com.octo.training.legacy.CV;
+import com.octo.training.legacy.CVFactory;
+import com.octo.training.legacy.CtrlAttributesEnregistrer;
+import com.octo.training.legacy.SessionContainer;
 
 public class UTestAjoutFormationCtrl {
 	

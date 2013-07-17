@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.joda.time.LocalDate;
+
 public class AjoutFormationCtrl {
 
 	public void doEnregistrer(HttpServletRequest req, SessionContainer scc,
@@ -33,10 +35,8 @@ public class AjoutFormationCtrl {
 		}
 		if (attEnregistrer.param_f_formation1_date_fin_mois != null
 				&& attEnregistrer.param_f_formation1_date_fin_annee != null) {
-			String chaine = attEnregistrer.param_f_formation1_date_fin_annee + "-"
-					+ attEnregistrer.param_f_formation1_date_fin_mois + "-" + "01" + " 00:00:00.000000000 ";
-			Timestamp myTime = Timestamp.valueOf(chaine);
-			formation1.setFrmDateFin(myTime);
+			LocalDate date = new LocalDate(attEnregistrer.param_f_formation1_date_fin_annee, attEnregistrer.param_f_formation1_date_fin_mois, 1);
+			formation1.setFrmDateFin(date);
 			param_renseign++;
 		}
 		if (attEnregistrer.param_f_formation1_etablissement != null) {
@@ -83,10 +83,8 @@ public class AjoutFormationCtrl {
 	}
 
     private int formatAndSetFormationDate(CtrlAttributesEnregistrer attEnregistrer, Formation formation1, int param_renseign) {
-        String chaine = attEnregistrer.param_f_formation1_date_debut_annee + "-"
-                + attEnregistrer.param_f_formation1_date_debut_mois + "-" + "01" + " 00:00:00.000000000 ";
-        Timestamp myTime = Timestamp.valueOf(chaine);
-        formation1.setFrmDateDebut(myTime);
+    	LocalDate date = new LocalDate(attEnregistrer.param_f_formation1_date_debut_annee, attEnregistrer.param_f_formation1_date_debut_mois, 1);
+		formation1.setFrmDateDebut(date);
         param_renseign++;
         return param_renseign;
     }

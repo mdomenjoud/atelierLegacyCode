@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
+import org.joda.time.LocalDate;
+
 
 public class Formation {
 	
@@ -12,9 +14,9 @@ public class Formation {
 
 	private Long frmId = null;
 
-	private Timestamp frmDateDebut = null;
+	private LocalDate frmDateDebut = null;
 
-	private Timestamp frmDateFin = null;
+	private LocalDate frmDateFin = null;
 
 	private String frmEcole = null;
 
@@ -33,8 +35,8 @@ public class Formation {
 	public void populateFromRs(ResultSet res) throws SQLException {
 		intId = FactoryUtils.getLongValueFromRs(res, "INT_ID");
 		frmId = FactoryUtils.getLongValueFromRs(res, "FRM_ID");
-		frmDateDebut = (Timestamp) FactoryUtils.getValueFromRs(res, "FRM_DATE_DEBUT");
-		frmDateFin = (Timestamp) FactoryUtils.getValueFromRs(res, "FRM_DATE_FIN");
+		frmDateDebut = (LocalDate) FactoryUtils.getValueFromRs(res, "FRM_DATE_DEBUT");
+		frmDateFin = (LocalDate) FactoryUtils.getValueFromRs(res, "FRM_DATE_FIN");
 		frmEcole = (String) FactoryUtils.getValueFromRs(res, "FRM_ECOLE");
 		frmLieu = (String) FactoryUtils.getValueFromRs(res, "FRM_LIEU");
 		frmSpecialite = (String) FactoryUtils.getValueFromRs(res, "FRM_SPECIALITE");
@@ -47,14 +49,14 @@ public class Formation {
 	/**
 	 * @return
 	 */
-	public Timestamp getFrmDateDebut() {
+	public LocalDate getFrmDateDebut() {
 		return frmDateDebut;
 	}
 
 	/**
 	 * @return
 	 */
-	public Timestamp getFrmDateFin() {
+	public LocalDate getFrmDateFin() {
 		return frmDateFin;
 	}
 
@@ -117,15 +119,15 @@ public class Formation {
 	/**
 	 * @param timestamp
 	 */
-	public void setFrmDateDebut(Timestamp timestamp) {
-		frmDateDebut = timestamp;
+	public void setFrmDateDebut(LocalDate date) {
+		frmDateDebut = date;
 	}
 
 	/**
 	 * @param timestamp
 	 */
-	public void setFrmDateFin(Timestamp timestamp) {
-		frmDateFin = timestamp;
+	public void setFrmDateFin(LocalDate date) {
+		frmDateFin = date;
 	}
 
 	/**

@@ -29,5 +29,8 @@ public class CtrlAttributesEnregistrer extends  ControllerBaseAttributes {
 
 	public Long param_f_formation1_tfo_code;
 
+	//Type : continue ou scolaire
+	public String param_f_formation1_type; 
 
+	public String param_f_formation1_nom_formation_continue; 
 }

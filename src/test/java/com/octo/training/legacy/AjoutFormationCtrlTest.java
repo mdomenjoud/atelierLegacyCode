@@ -14,26 +14,26 @@ import com.octo.training.legacy.CVFactory;
 import com.octo.training.legacy.CtrlAttributesEnregistrer;
 import com.octo.training.legacy.SessionContainer;
 
-public class UTestAjoutFormationCtrl {
-	
+public class AjoutFormationCtrlTest {
+
 	@Test
 	public void dummyTest() throws SQLException{
 		AjoutFormationCtrl controller = new AjoutFormationCtrl();
     	SessionContainer scc = new SessionContainer();
-		
+
     	CtrlAttributesEnregistrer attributes = new CtrlAttributesEnregistrer();
     	attributes.param_f_formation1_diplome = "Master";
     	attributes.param_f_formation1_lieu = "Paris";
     	attributes.param_f_niveau_formation = 5L;
     	attributes.param_f_formation1_date_debut_annee=2013;
     	attributes.param_f_formation1_date_debut_mois = 12;
-    	
-		for(int i=0;i<21;i++){
+
+		for(int i=0;i<20;i++){
 			controller.doEnregistrer(null, scc, attributes);
 		}
-		
+
 		CV retrieved = CVFactory.getTableauBord(scc.getInternaute().getIntId());
-		
+
 		assertThat(retrieved.getCuvPourcentFormation(), is(100));
 	}
 

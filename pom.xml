@@ -10,7 +10,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.6</java.version>
 		<spring.version>3.0.5.RELEASE</spring.version>
 		<jsp.version>2.2</jsp.version>
 		<jstl.version>1.2</jstl.version>
@@ -71,6 +71,11 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.2</version>
+		</dependency>
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -85,9 +90,10 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.2</version>
+			<groupId>org.easytesting</groupId>
+			<artifactId>fest-assert-core</artifactId>
+			<version>2.0M10</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
